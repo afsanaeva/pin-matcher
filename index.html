@@ -79,11 +79,18 @@
         buttons.addEventListener('click',function(event){
             const digit = event.target.innerText;
             if(isNaN(digit)){
+                //for clear
                 if(digit=== 'C'){
                     const typedDigit = document.getElementById('typeDigit');
                     typedDigit.value = '';
                 }
-                // handle B
+                //for backspace
+                if(digit ==='B'){     
+                    onclick = function backspace(){
+                    const typeNumber = document.getElementById('typeDigit').value;
+                    document.getElementById('typeDigit').value = typeNumber.substring(0,typeNumber.length-1);
+                }
+                }
             }
             else{
                 const typedDigit = document.getElementById('typeDigit');
